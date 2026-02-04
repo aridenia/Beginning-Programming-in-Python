@@ -11,9 +11,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install JupyterLite
-        run: |
-          pip install jupyterlite-core jupyterlite-pyodide-kernel
-          pip install jupyter-server
+        run: pip install "jupyterlite[pyodide]"
 
       - name: Build JupyterLite site
         run: jupyter lite build --lite-dir . --contents content --output-dir dist
