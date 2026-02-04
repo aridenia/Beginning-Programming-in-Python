@@ -15,8 +15,9 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install JupyterLite (full bundle)
+      - name: Install JupyterLite and server
         run: |
+          pip install jupyter-server
           pip install "jupyterlite[pyodide]"
 
       - name: Build JupyterLite site
