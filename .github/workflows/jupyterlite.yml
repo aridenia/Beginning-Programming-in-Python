@@ -18,7 +18,8 @@ jobs:
       - name: Install JupyterLite and server
         run: |
           pip install jupyter-server
-          pip install "jupyterlite[pyodide]"
+          pip install jupyterlite-pyodide-kernel
+
 
       - name: Build JupyterLite site
         run: jupyter lite build --lite-dir . --contents content --output-dir dist
