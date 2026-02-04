@@ -11,11 +11,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install JupyterLite
-        run: pip install jupyterlite-core jupyterlite-pyodide-kernel
+        run: |
+          pip install jupyterlite-core jupyterlite-pyodide-kernel
+          pip install jupyter-server
 
       - name: Build JupyterLite site
         run: jupyter lite build --contents content --output-dir dist
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -36,3 +38,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
