@@ -14,8 +14,8 @@ jobs:
         run: pip install jupyterlite-core jupyterlite-pyodide-kernel
 
       - name: Build JupyterLite site
-        run: jupyter lite build --output-dir dist
-
+        run: jupyter lite build --contents content --output-dir dist
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
