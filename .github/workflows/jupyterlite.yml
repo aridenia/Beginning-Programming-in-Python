@@ -10,8 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install JupyterLite
-        run: pip install "jupyterlite[pyodide]"
+      - name: Install JupyterLite (full bundle)
+        run: |
+          pip install "jupyterlite[pyodide]"
 
       - name: Build JupyterLite site
         run: jupyter lite build --lite-dir . --contents content --output-dir dist
@@ -36,4 +37,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
